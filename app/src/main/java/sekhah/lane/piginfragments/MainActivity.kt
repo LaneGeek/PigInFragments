@@ -6,12 +6,23 @@ import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
 
+    private var player1Name = ""
+    private var player2Name = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
 
     fun newGame() {
-        startActivity(Intent(this, SecondActivity::class.java))
+        val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra("player1Name", player1Name)
+        intent.putExtra("player2Name", player2Name)
+        startActivity(intent)
+    }
+
+    fun playerNames(player1Name: String, player2Name: String) {
+        this.player1Name = player1Name
+        this.player2Name = player2Name
     }
 }

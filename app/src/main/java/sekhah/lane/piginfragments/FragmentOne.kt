@@ -15,7 +15,10 @@ class FragmentOne : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        newGameButton.setOnClickListener() {
+        newGameButton.setOnClickListener {
+            val player1 = player1EditText.text.toString()
+            val player2 = player2EditText.text.toString()
+            (activity as MainActivity).playerNames(player1, player2)
             (activity as MainActivity).newGame()
             Toast.makeText(activity, "New Game", Toast.LENGTH_SHORT).show()
         }
