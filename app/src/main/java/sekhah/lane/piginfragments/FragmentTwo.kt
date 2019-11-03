@@ -17,8 +17,8 @@ class FragmentTwo : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val player1 = (activity as SecondActivity).player1Name()
-        val player2 = (activity as SecondActivity).player2Name()
+        val player1 = (activity as IPig).player1Name()
+        val player2 = (activity as IPig).player2Name()
         player1NameTextView.text = player1
         player2NameTextView.text = player2
 

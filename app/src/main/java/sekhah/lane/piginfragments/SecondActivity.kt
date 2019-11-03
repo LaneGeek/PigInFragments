@@ -3,7 +3,7 @@ package sekhah.lane.piginfragments
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class SecondActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity(), IPig {
 
     private var player1Name = ""
     private var player2Name = ""
@@ -20,7 +20,6 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
     }
 
-    fun player1Name(): String = player1Name
-
-    fun player2Name(): String = player2Name
+    override fun player1Name(): String = player1Name
+    override fun player2Name(): String = player2Name
 }

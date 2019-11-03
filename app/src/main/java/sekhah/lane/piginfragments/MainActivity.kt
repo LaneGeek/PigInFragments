@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), IPig {
 
     private var player1Name = ""
     private var player2Name = ""
@@ -25,4 +25,7 @@ class MainActivity : AppCompatActivity() {
         this.player1Name = player1Name
         this.player2Name = player2Name
     }
+
+    override fun player1Name(): String = player1Name
+    override fun player2Name(): String = player2Name
 }
