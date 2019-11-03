@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), IPig {
             intent.putExtra("player2Name", player2Name)
             startActivity(intent)
         } else {
-            // Launch FragmentTwo within this activity
+            // Launch FragmentTwo within this activity, warning: some ghosting my appear...
             val frag = FragmentTwo()
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment2, frag)

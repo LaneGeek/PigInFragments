@@ -17,6 +17,8 @@ class FragmentOne : Fragment() {
         newGameButton.setOnClickListener {
             val player1 = player1EditText.text.toString()
             val player2 = player2EditText.text.toString()
+
+            // Calling functions in MainActivity
             (activity as MainActivity).playerNames(player1, player2)
             (activity as MainActivity).newGame()
         }
