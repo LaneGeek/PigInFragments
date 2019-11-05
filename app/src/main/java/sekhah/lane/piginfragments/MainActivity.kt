@@ -3,7 +3,7 @@ package sekhah.lane.piginfragments
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_second.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), IPig {
 
@@ -15,8 +15,10 @@ class MainActivity : AppCompatActivity(), IPig {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Using Brian's hack to find out if one or two panes are running
-        onePaneLayout = fragment2 == null
+        // Using my own hack to find out if one or two panes are running. I created a FrameLayout
+        // with a TextView for the sole purpose so that I can check if it exists. If it does then
+        // I know that there are two fragments on the screen at the same time.
+        onePaneLayout = bigScreenActiveTextView == null
     }
 
     fun newGame() {
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity(), IPig {
             intent.putExtra("player2Name", player2Name)
             startActivity(intent)
         } else {
-            // Launch FragmentTwo within this activity, warning: some ghosting my appear...
+            // Launch FragmentTwo within this activity
             val frag = FragmentTwo()
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment2, frag)
